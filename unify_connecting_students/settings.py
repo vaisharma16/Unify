@@ -26,7 +26,7 @@ SECRET_KEY = '4o38b10#&-(=g=7#u8^=4$8(f^z-)s3&z7p+yc)f**l64)z2cy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','unify-connecting-students.azurewebsites.net', 'unify-connecting-student.herokuapp.com','https://unify-cs.azurewebsites.net']
+ALLOWED_HOSTS = ['127.0.0.1','unify-connecting-students.azurewebsites.net', 'unify-connecting-student.herokuapp.com','https://unify-cs.azurewebsites.net/']
 
 
 # Application definition
