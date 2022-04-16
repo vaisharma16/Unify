@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'Unify-CS'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6CF9115A9E444F4FA617F9BB3E1358A3 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8A80D74ADE0A495CA30FE4A8EC36289F }}
