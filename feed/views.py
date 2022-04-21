@@ -32,22 +32,15 @@ class PostListView(ListView):
 		if self.request.user.is_authenticated:
 			user = self.request.user
 			messages =Message.get_messages(user=user)
-			active_direct = user.username
 			directs = Message.objects.filter(user=user, recipient__username=user.username)
 			liked = [i for i in Post.objects.all() if Like.objects.filter(user = self.request.user, post=i)]
 			context['liked_post'] = liked
-			friends = []
-			for friend in self.request.user.profile.friends.all():
-				friends.append(friend.user.username)
-			#context['friends'] = friends
-			context = { 'friends':friends,
-		     'directs': directs,
-		     'messages': messages,
-		     'active_direct':active_direct,
-			 
-	}
-
-
+		friends = []
+		for friend in self.request.user.profile.friends.all():
+			friends.append(friend.user.username)
+			context['friends'] = friends
+			context['messages'] = messages
+			context['directs'] = directs
 		return context
 
 class Explore(ListView):
@@ -62,23 +55,17 @@ class Explore(ListView):
 		if self.request.user.is_authenticated:
 			user = self.request.user
 			messages =Message.get_messages(user=user)
-			active_direct = user.username
 			directs = Message.objects.filter(user=user, recipient__username=user.username)
 			liked = [i for i in Post.objects.all() if Like.objects.filter(user = self.request.user, post=i)]
 			context['liked_post'] = liked
-			friends = []
-			for friend in self.request.user.profile.friends.all():
-				friends.append(friend.user.username)
-			#context['friends'] = friends
-			context = { 'friends':friends,
-		     'directs': directs,
-		     'messages': messages,
-		     'active_direct':active_direct,
-			 
-	}
-			
+		friends = []
+		for friend in self.request.user.profile.friends.all():
+			friends.append(friend.user.username)
+			context['friends'] = friends
+			context['messages'] = messages
+			context['directs'] = directs
 		return context
-
+    
 class UserPostListView(LoginRequiredMixin, ListView):
 	model = Post
 	template_name = 'feed/user_posts.html'
