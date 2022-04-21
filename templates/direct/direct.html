@@ -23,7 +23,7 @@
                 </div>
                 {% for message in messages %}
                 <a class="{% if active_direct == message.user.username %}is-active{% endif %}" href="{% url 'directs' message.user.username %}">
-                <ul class="list-unstyled chat-list mt-2 mb-0">
+                <ul class="list-unstyled chat-list mt-2 ">
                     <li class="clearfix">
                         
                         {% if message.user.profile.image %}
@@ -146,6 +146,7 @@ body{
     margin-bottom: 30px;
     border-radius: .55rem;
     position: relative;
+    height: auto;
     width: 100%;
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
 }

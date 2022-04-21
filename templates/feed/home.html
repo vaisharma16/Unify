@@ -114,7 +114,9 @@
                         <div class="head">
                             <div class="user">
                                 <div class="profile-photo">
-                                    <img src="{{post.username.profile.image.url}}" alt="">
+                                    <a href="{{ post.username.profile.get_absolute_url }}">
+                                        <img src="{{post.username.profile.image.url}}" alt="">
+                                    </a>
                                 </div>
                                 <div class="info">
                                     <a href="{{ post.username.profile.get_absolute_url }}" style="text-decoration: none; color: var(--color-primary);"><h3>{{post.username}}</h3></a>
@@ -300,13 +302,14 @@
                         </div>
                         
                         <div class="message-body">
-                            <h5>{{ message.user.first_name }} {{ message.user.last_name }}</h5>
+                            <h4>{{ message.user.first_name }} {{ message.user.last_name }}</h4>
                             <!--READ MESSAGES ARE TEXT MUTED-->
                             <p class="text-muted">{{ directs.body }} <p>
                         </div>
                         
                     </div>
                 </a>
+                
                     {% endfor %}
                     
                     
@@ -314,15 +317,17 @@
                 <!--END OF MESSAGES-->
 
                 <!-------------------------- FRIEND REQUESTS ------------------------------>
-                <div class="friend-request">
+                <!-- <div class="friend-request">
                     <h4>Requests</h4>
+                    {% for friend in friends %}
                     <div class="request">
                         <div class="info">
                             <div class="profile-photo">
                                 <img src="{% static './images/photo5.png' %}" alt="">
                             </div>
                             <div>
-                                <h5>Hajia Bintu</h5>
+                                <h5>{{friend}}</h5>
+                                
                                 <p class="text-muted">
                                     8 mutual friends
                                 </p>   
@@ -337,8 +342,9 @@
                             </button>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
-            </div>
+            </div> -->
             <!--END OF RIGHT-->
         </div>
     </main>

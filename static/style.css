@@ -476,6 +476,10 @@ main .container .left .profile{
     top: var(--sticky-top-right);
 }
 
+.message{
+    margin: 1rem;
+}
+
 .right .messages .heading{
     display: flex;
     align-items: center;
@@ -525,7 +529,7 @@ main .container .left .profile{
 .right .messages .message{
     display: flex;
     gap: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     align-items: start;
 }
 
@@ -540,6 +544,7 @@ main .container .left .profile{
 .right .messages .message .profile-photo{
     overflow: visible;
     position: relative;
+    margin-bottom: 1rem;
 }
 
 .right .messages .message .profile-photo img{
